@@ -4,16 +4,29 @@ version "0.1"
 using_library 'envire_types'
 
 import_types_from 'base'
+import_types_from 'pcl'
 
 # define opaques
 typekit do
-    opaque_autogen '/envire/type/OcTree', :includes => "envire_types/OcTree.hpp", :type => :envire_serialization
-    opaque_autogen '/boost/shared_ptr< /octomap/AbstractOcTree >', :includes => "envire_types/OcTree.hpp", :type => :boost_serialization
+    opaque_autogen '/boost/shared_ptr< /octomap/AbstractOcTree >',
+                    :includes => "envire_types/OcTree.hpp",
+                    :type => :boost_serialization
+
+    opaque_autogen '/envire/type/OcTree',
+                    :includes => "envire_types/OcTree.hpp",
+                    :type => :envire_serialization,
+                    :embedded_type => "/boost/shared_ptr< /octomap/AbstractOcTree >"
+
+    opaque_autogen '/envire/type/PointCloud',
+                    :includes => "envire_types/PointCloud.hpp",
+                    :type => :envire_serialization,
+                    :embedded_type => "/pcl/PCLPointCloud2"
 end
 
 
 # type exports
 typekit do
     export_types '/boost/shared_ptr< /octomap/AbstractOcTree >',
-                 '/envire/type/OcTree'
+                 '/envire/type/OcTree',
+                 '/envire/type/PointCloud'
 end

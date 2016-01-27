@@ -8,5 +8,5 @@
   <logo>http://</logo>
   <depend package="base/cmake" />
   <depend package="envire/orogen/envire_core" />
-  <depend package="envire/envire_octomap" />
+  <depend package="envire/envire_pcl" />
 </package>

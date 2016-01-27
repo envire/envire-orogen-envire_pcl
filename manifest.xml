@@ -7,7 +7,6 @@
   <url>http://rock-robotics.org/</url>
   <logo>http://</logo>
   <depend package="base/cmake" />
-  <depend package="slam/orogen/envire_core" />
-  <depend package="slam/orogen/pcl" />
-  <depend package="slam/envire_types" />
+  <depend package="envire/orogen/envire_core" />
+  <depend package="envire/envire_octomap" />
 </package>

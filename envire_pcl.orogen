@@ -10,7 +10,7 @@ import_types_from 'pcl'
 typekit do
 
     opaque_autogen '/envire/type/PointCloud',
-                    :includes => "envire_types/PointCloud.hpp",
+                    :includes => "envire_pcl/PointCloud.hpp",
                     :type => :envire_serialization,
                     :embedded_type => "/pcl/PCLPointCloud2"
 end

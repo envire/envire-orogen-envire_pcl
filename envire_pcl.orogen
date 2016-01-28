@@ -1,7 +1,7 @@
-name "envire_types"
+name "envire_pcl"
 version "0.1"
 
-using_library 'envire_types'
+using_library 'envire_pcl'
 
 import_types_from 'base'
 import_types_from 'pcl'

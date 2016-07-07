@@ -5,18 +5,11 @@ using_library 'envire_pcl'
 
 import_types_from 'base'
 import_types_from 'pcl'
-
-# define opaques
-typekit do
-
-    opaque_autogen '/envire/pcl/PointCloud',
-                    :includes => "envire_pcl/PointCloud.hpp",
-                    :type => :envire_serialization,
-                    :embedded_type => "/pcl/PCLPointCloud2"
-end
+import_types_from 'envire_core'
 
 
 # type exports
 typekit do
-    export_types '/envire/pcl/PointCloud'
+    pointcloud = spatio_temporal 'pcl/PCLPointCloud2'
+    export_types pointcloud
 end
